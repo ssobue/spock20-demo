@@ -27,12 +27,6 @@ jobs:
           path: ./target/surefire-reports
           destination: artifacts/1.3-2.5
 
-      - run: mvn clean verify -Dspock.version=1.3-groovy-3.0 -Dgroovy.version=3.0.6
-
-      - store_artifacts:
-          path: ./target/surefire-reports
-          destination: artifacts/1.3-3.0
-
       - run: mvn clean verify -Dspock.version=2.0-M4-groovy-2.5 -Dgroovy.version=2.5.13
 
       - store_artifacts:
