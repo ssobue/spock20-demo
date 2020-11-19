@@ -49,7 +49,7 @@ jobs:
           path: ./target/surefire-reports
       - store_artifacts:
           path: ./target/surefire-reports
-          destination: artifacts/2.0-M4-2.5
+          destination: artifacts/2.0-M4-3.0
 
       - save_cache:
           paths:
