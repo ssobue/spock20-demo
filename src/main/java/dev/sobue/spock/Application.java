@@ -1,7 +1,8 @@
 package dev.sobue.spock;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import static org.springframework.boot.SpringApplication.run;
 
 /**
  * Launch Class.
@@ -9,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author ssobue
  */
 @SpringBootApplication
-public class DemoApplication {
+public class Application {
 
   /**
    * Main Method.
@@ -17,6 +18,6 @@ public class DemoApplication {
    * @param args Command Line Arguments.
    */
   public static void main(String[] args) {
-    SpringApplication.run(DemoApplication.class, args);
+    run(Application.class, args);
   }
 }

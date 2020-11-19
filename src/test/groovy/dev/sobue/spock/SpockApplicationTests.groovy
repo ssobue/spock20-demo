@@ -9,7 +9,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 @RunWith(Enclosed)
-class SpockDemoApplicationTests {
+class SpockApplicationTests {
 
     // 1 case
     @SpringBootTest

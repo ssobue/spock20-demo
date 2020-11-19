@@ -1,23 +1,24 @@
 package dev.sobue.spock;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.junit4.SpringRunner;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-@RunWith(SpringRunner.class)
-public class DemoApplicationJUnit4Tests {
+@DisplayName("Application Launching Tests")
+class ApplicationTests {
 
   @Autowired
   private ApplicationContext context;
 
   // 1 case
   @Test
-  public void contextLoads() {
-    Assert.assertNotNull(context);
+  @DisplayName("Context Load Test")
+  void contextLoads() {
+    assertNotNull(context);
   }
 }

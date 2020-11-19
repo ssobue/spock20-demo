@@ -21,35 +21,29 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: mvn clean verify -Dspock.version=1.3-groovy-2.5 -Dgroovy.version=2.5.12
+      - run: mvn clean verify -Dspock.version=1.3-groovy-2.5 -Dgroovy.version=2.5.13
 
       - store_artifacts:
           path: ./target/surefire-reports
           destination: artifacts/1.3-2.5
 
-      - run: mvn clean verify -Dspock.version=2.0-M2-groovy-2.5 -Dgroovy.version=2.5.12
+      - run: mvn clean verify -Dspock.version=1.3-groovy-3.0 -Dgroovy.version=3.0.6
 
       - store_artifacts:
           path: ./target/surefire-reports
-          destination: artifacts/2.0-M2-2.5
+          destination: artifacts/1.3-3.0
 
-      - run: mvn clean verify -Dspock.version=2.0-M2-groovy-3.0 -Dgroovy.version=3.0.4
-
-      - store_artifacts:
-          path: ./target/surefire-reports
-          destination: artifacts/2.0-M2-3.0
-
-      - run: mvn clean verify -Dspock.version=2.0-M3-groovy-2.5 -Dgroovy.version=2.5.12
+      - run: mvn clean verify -Dspock.version=2.0-M4-groovy-2.5 -Dgroovy.version=2.5.13
 
       - store_artifacts:
           path: ./target/surefire-reports
-          destination: artifacts/2.0-M3-2.5
+          destination: artifacts/2.0-M4-2.5
 
-      - run: mvn clean verify -Dspock.version=2.0-M3-groovy-3.0 -Dgroovy.version=3.0.4
+      - run: mvn clean verify -Dspock.version=2.0-M4-groovy-3.0 -Dgroovy.version=3.0.6
 
       - store_artifacts:
           path: ./target/surefire-reports
-          destination: artifacts/2.0-M3-3.0
+          destination: artifacts/2.0-M4-3.0
 
       - save_cache:
           paths:

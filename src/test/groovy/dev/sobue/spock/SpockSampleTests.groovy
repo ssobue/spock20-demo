@@ -1,8 +1,9 @@
 package dev.sobue.spock
 
-import org.springframework.util.StringUtils
 import spock.lang.Specification
 import spock.lang.Unroll
+
+import static org.springframework.util.StringUtils.hasLength
 
 class SpockSampleTests extends Specification {
 
@@ -10,7 +11,7 @@ class SpockSampleTests extends Specification {
     @Unroll
     def "StringUtils - Tests - #input"() {
         expect:
-        assert StringUtils.isEmpty(input) == answer
+        assert !hasLength(input) == answer
 
         where:
         input | answer
