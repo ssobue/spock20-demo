@@ -23,18 +23,33 @@ jobs:
 
       - run:
           name: Run Tests with Groovy 2.5.13, Spock 1.3
-          command: mvn verify -Dspock.version=1.3-groovy-2.5 -Dgroovy.version=2.5.13 -Dsurefire.reportNameSuffix=1.3-2.5
-
-      - run:
-          name: Run Tests with Groovy 2.5.13, Spock 2.0-M4
-          command: mvn verify -Dspock.version=2.0-M4-groovy-2.5 -Dgroovy.version=2.5.13 -Dsurefire.reportNameSuffix=2.0-M4-2.5
-
-      - run:
-          name: Run Tests with Groovy 3.0.6, Spock 2.0-M4
-          command: mvn verify -Dspock.version=2.0-M4-groovy-3.0 -Dgroovy.version=3.0.6 -Dsurefire.reportNameSuffix=2.0-M4-3.0
+          command: mvn clean verify -Dspock.version=1.3-groovy-2.5 -Dgroovy.version=2.5.13 -Dsurefire.reportNameSuffix=1.3-2.5
 
       - store_test_results:
           path: ./target/surefire-reports
+      - store_artifacts:
+          path: ./target/surefire-reports
+          destination: artifacts/1.3-2.5
+
+      - run:
+          name: Run Tests with Groovy 2.5.13, Spock 2.0-M4
+          command: mvn clean verify -Dspock.version=2.0-M4-groovy-2.5 -Dgroovy.version=2.5.13 -Dsurefire.reportNameSuffix=2.0-M4-2.5
+
+      - store_test_results:
+          path: ./target/surefire-reports
+      - store_artifacts:
+          path: ./target/surefire-reports
+          destination: artifacts/2.0-M4-2.5
+
+      - run:
+          name: Run Tests with Groovy 3.0.6, Spock 2.0-M4
+          command: mvn clean verify -Dspock.version=2.0-M4-groovy-3.0 -Dgroovy.version=3.0.6 -Dsurefire.reportNameSuffix=2.0-M4-3.0
+
+      - store_test_results:
+          path: ./target/surefire-reports
+      - store_artifacts:
+          path: ./target/surefire-reports
+          destination: artifacts/2.0-M4-2.5
 
       - save_cache:
           paths:
